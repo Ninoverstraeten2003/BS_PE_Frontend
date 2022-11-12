@@ -1,4 +1,4 @@
-name: Java CI/CD with Maven PE
+name: REACT PE
 
 on:
   push:
