@@ -48,6 +48,11 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
+      - name: Webhook
+        uses: distributhor/workflow-webhook@v2
+        env:
+          webhook_url: "http://193.191.176.110:9000/api/webhooks/016ba71a-2b07-4da8-abec-ed5651881d72"
+
       
 
 
