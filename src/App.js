@@ -7,7 +7,8 @@ import CollectionForm from './Form'
 
 class App extends Component{
 
-    API_URL="http://localhost:8080"
+    API_PORT = process.env.REACT_APP_API_PORT
+    API_URL = `http://localhost:${this.API_PORT}`
 
     state = {
       products: [],
