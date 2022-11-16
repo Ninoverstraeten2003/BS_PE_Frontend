@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Build and Push to Dockerhub
+    name: Build and Push to GHCR
     runs-on: ubuntu-latest
     steps:
 
@@ -43,8 +43,8 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.GHCR_USERNAME }}/pefrontend:latest
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
+          cache-from: type=local,ref=${{ secrets.GHCR_USERNAME }}/pefrontend:buildcache,src=/tmp/.buildx-cache
+          cache-to: type=local,ref=${{ secrets.GHCR_USERNAME }}/pefrontend:buildcache,dest=/tmp/.buildx-cache
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
