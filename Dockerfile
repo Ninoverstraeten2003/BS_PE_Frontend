@@ -1,6 +1,6 @@
 # Use a Node 16 base image
 FROM node:16-alpine 
-LABEL org.opencontainers.image.source ="https://github.com/Ninoverstraeten2003/BS_PE_Frontend"
+LABEL org.opencontainers.image.source="https://github.com/Ninoverstraeten2003/BS_PE_Frontend"
 # Set the working directory to /app inside the container
 WORKDIR /app
 # Move the package.json and package-lock.json into the container to install dependencies
