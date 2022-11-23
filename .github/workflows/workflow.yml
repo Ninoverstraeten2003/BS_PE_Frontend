@@ -45,7 +45,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.GHCR_USERNAME }}:latest
+          tags: ghcr.io/${{ secrets.GHCR_USERNAME }}/bs_pe_frontend:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
